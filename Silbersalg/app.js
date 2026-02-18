@@ -1,9 +1,6 @@
 'use strict';
 
-/* 
-  Theme-håndtering:
-  Bytter mellom light- og dark-theme dersom theme-knappen finnes på siden
-*/
+/* Bytter mellom light/dark theme. */
 const switcher = document.querySelector('.btn');
 
 if (switcher) {
@@ -16,33 +13,23 @@ if (switcher) {
   });
 }
 
-/* 
-  Produktnavigasjon:
-  Gjør listeelementer klikkbare, og navigerer til angitt mappe
-*/
+/* Navigerer til valgt produktside. */
 document.querySelectorAll('.nav-item').forEach(item => {
   item.addEventListener('click', () => {
     window.location.href = item.dataset.target;
   });
 });
 
-/* 
-  Handlekurv:
-  Leser lagrede produkter fra localStorage, eller starter tom
-*/
+/* Leser handlekurv fra localStorage. */
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-/* 
-  Oppdaterer antall produkter i handlekurv-ikonet
-*/
+/* Oppdaterer antall i handlekurv-ikonet. */
 const cartCount = document.getElementById('cart-count');
 if (cartCount) {
   cartCount.textContent = cart.length;
 }
 
-/* 
-  Viser / skjuler handlekurv-panelet når brukeren klikker på handlekurven
-*/
+/* Viser/skjuler handlekurv-panelet. */
 const cartButton = document.getElementById('cart');
 const cartPanel = document.getElementById('cart-panel');
 
@@ -53,14 +40,10 @@ if (cartButton && cartPanel) {
   });
 }
 
-/* 
-  Referanse til listen som viser produktene i handlekurven
-*/
+/* Listeelement for varer i handlekurven. */
 const cartItems = document.getElementById('cart-items');
 
-/* 
-  Renderer handlekurvens innhold basert på nåværende cart-array
-*/
+/* Tegner innholdet i handlekurven. */
 function renderCart() {
   if (!cartItems) return;
 
@@ -76,9 +59,7 @@ function renderCart() {
   });
 }
 
-/* 
-  Fjerner ett produkt fra handlekurven basert på indeks
-*/
+/* Fjerner ett produkt fra handlekurven. */
 function fjern(index) {
   cart.splice(index, 1);
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -90,9 +71,7 @@ function fjern(index) {
   renderCart();
 }
 
-/* 
-  Tømmer hele handlekurven
-*/
+/* Tømmer hele handlekurven. */
 const clearBtn = document.getElementById('clear-cart');
 
 if (clearBtn) {
@@ -110,7 +89,7 @@ if (clearBtn) {
       notification.textContent = 'Handlekurven er tom.';
       notification.classList.remove('hidden');
       
-      // Skjul meldingen etter 3 sekunder
+      // Skjul melding etter 3 sekunder
       setTimeout(() => {
         notification.classList.add('hidden');
       }, 3000);
@@ -120,9 +99,7 @@ if (clearBtn) {
   });
 }
 
-/* 
-  Legger til et produkt i handlekurven og oppdaterer visning og lagring
-*/
+/* Legger til produkt i handlekurven. */
 function leggTil(produkt) {
   cart.push(produkt);
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -137,7 +114,7 @@ function leggTil(produkt) {
     notification.textContent = `${produkt} lagt til i handlekurven`;
     notification.classList.remove('hidden');
     
-    // Skjul meldingen etter 3 sekunder
+    // Skjul melding etter 3 sekunder
     setTimeout(() => {
       notification.classList.add('hidden');
     }, 3000);
@@ -146,6 +123,7 @@ function leggTil(produkt) {
   renderCart();
 }
 
+/* Sender bestilling til backend. */
 async function checkout() {
   if (cart.length === 0) {
     alert("Handlekurven er tom");
@@ -184,10 +162,7 @@ async function checkout() {
   }
 }
 
-/*
-  Kontaktskjema:
-  Håndterer innsending av kontaktskjemaet
-*/
+/* Sender kontaktskjema til backend. */
 const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
@@ -225,14 +200,16 @@ if (contactForm) {
   });
 }
 
-// Hamburger - Navbar
+/* Åpner/lukker mobilmeny i toppnavigasjon. */
+const nav = document.querySelector('.topnav');
+const toggle = document.querySelector('.menu-toggle');
 
-  const nav = document.querySelector('.topnav');
-  const toggle = document.querySelector('.menu-toggle');
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+          message,
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
+        }),
 
-
+      });
 
