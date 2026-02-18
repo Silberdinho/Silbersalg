@@ -74,9 +74,15 @@ li {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: var(--btnBg);
-  color: var(--btnFontColor);
-  padding: 10px 15px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #222;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  border: none;
+  font: inherit;
+  line-height: 1;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -84,6 +90,11 @@ li {
 
 #cart:hover {
   transform: scale(1.05);
+}
+
+#cart:focus-visible {
+  outline: 2px solid var(--fontColor);
+  outline-offset: 2px;
 }
 
 #cart-panel {

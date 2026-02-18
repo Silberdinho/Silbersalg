@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <!-- Metadata og felles styling -->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bestill snacks fra Silbersalg i ønsket mengde.">
   <title>Snacks</title>
   <link rel="stylesheet" href="../Css/main.css">
   <link rel="stylesheet" href="../Css/snacks.css">
@@ -29,7 +31,7 @@
       </li>
     </ul>
 
-    <a href="../index.html" class="back-btn">← Tilbake til forsiden</a>
+    <a href="../" class="back-btn">← Tilbake til forsiden</a>
 
   </main>
 
@@ -37,9 +39,9 @@
   <button class="btn">Dark</button>
 
   <!-- Handlekurv-ikon -->
-  <div id="cart">
+  <button id="cart" type="button" aria-controls="cart-panel" aria-expanded="false">
     🛒 Handlekurv (<span id="cart-count">0</span>)
-  </div>
+  </button>
 
   <!-- Handlekurv-panel -->
   <div id="cart-panel" class="hidden">

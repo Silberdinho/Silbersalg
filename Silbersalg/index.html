@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Silbersalg tilbyr mat, snacks og drikke med enkel bestilling og rask kundekontakt.">
   <title>Silbersalg frontpage</title>
   <link rel="stylesheet" href="Css/main.css">
   <link rel="stylesheet" href="Css/index.css">
@@ -20,12 +22,9 @@
   </button>
 
   <div class="menu">
-    <a class="active" href="#home">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-    <a href="Mat/index.html">Mat</a>
-    <a href="Snacks/index.html">Snacks</a>
-    <a href="Drikke/index.html">Drikke</a>
+    <a class="active" href="./">Home</a>
+    <a href="Kontakt/">Kontakt</a>
+    <a href="OmOss/">Om oss</a>
   </div>
 </div>
 
@@ -45,9 +44,9 @@
   <button class="btn">Dark</button>
 
   <!-- Handlekurv-ikon -->
-  <div id="cart">
+  <button id="cart" type="button" aria-controls="cart-panel" aria-expanded="false">
     🛒 Handlekurv (<span id="cart-count">0</span>)
-  </div>
+  </button>
 
   <!-- Handlekurv-panel -->
   <div id="cart-panel" class="hidden">
@@ -84,7 +83,7 @@
 
   <div class="form-divider"></div>
 
-  <h3>Her kan du ta kontakt med oss:</h3>
+  <h3>Her kan du kontakte oss:</h3>
   <form id="contact-form" class="contact-form">
     <div class="form-group">
       <label for="name">Navn</label>

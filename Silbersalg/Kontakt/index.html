@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kontakt Silbersalg for spørsmål om produkter, bestilling og levering.">
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="../Css/main.css">
+  <link rel="stylesheet" href="../Css/contact-info.css">
+  <link rel="stylesheet" href="../Css/contact-form.css">
+</head>
+
+<body class="dark-theme">
+
+<div class="topnav">
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu">
+    <a href="../">Home</a>
+    <a class="active" href="../Kontakt/">Kontakt</a>
+    <a href="../OmOss/">Om oss</a>
+  </div>
+</div>
+
+<main class="container">
+  <h1>Kontakt</h1>
+  <p id="msg">Ta kontakt med oss:</p>
+</main>
+
+<footer id="contact">
+  <h2>Kontaktinformasjon:</h2>
+
+  <p>
+    📧 Email:
+    <a href="mailto:aarons@uia.com">aarons@uia.com</a>
+  </p>
+
+  <p>
+    📞 Telefon:
+    <a href="tel:+47112">+47 112</a>
+  </p>
+
+  <p>
+    📍 Lokasjon:
+    <a
+      href="https://www.google.com/maps/place/Gj%C3%B8vik/@60.7950082,10.6677329,13z/data=!3m1!4b1!4m6!3m5!1s0x4641da1511542929:0x4f493de5ad7181ed!8m2!3d60.7954302!4d10.6916303!16s%2Fg%2F11bc65gs29?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      "Gjøvik, Norge"
+    </a>
+  </p>
+
+  <div class="form-divider"></div>
+
+  <h3>Her kan du kontakte oss:</h3>
+  <form id="contact-form" class="contact-form">
+    <div class="form-group">
+      <label for="name">Navn</label>
+      <input type="text" id="name" name="name" placeholder="Ditt navn" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-post</label>
+      <input type="email" id="email" name="email" placeholder="din@epost.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Melding</label>
+      <textarea id="message" name="message" placeholder="Skriv meldingen her..." rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send</button>
+  </form>
+</footer>
+
+<button class="btn">Dark</button>
+
+<button id="cart" type="button" aria-controls="cart-panel" aria-expanded="false">
+  🛒 Handlekurv (<span id="cart-count">0</span>)
+</button>
+
+<div id="cart-panel" class="hidden">
+  <h3>Handlekurv</h3>
+  <ul id="cart-items"></ul>
+  <button id="clear-cart">Tøm handlekurv</button>
+  <button onclick="checkout()">Kjøp</button>
+</div>
+
+<script src="../app.js"></script>
+
+</body>
+</html>

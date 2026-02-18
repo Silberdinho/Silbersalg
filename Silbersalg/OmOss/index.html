@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Les mer om Silbersalg, våre verdier og hva vi tilbyr innen mat, snacks og drikke.">
+  <title>Om oss</title>
+  <link rel="stylesheet" href="../Css/main.css">
+  <link rel="stylesheet" href="../Css/OmOss.css">
+</head>
+
+<body class="dark-theme">
+
+  <div class="topnav">
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="menu">
+      <a href="../">Home</a>
+      <a href="../Kontakt/">Kontakt</a>
+      <a class="active" href="../OmOss/">Om oss</a>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="about-card">
+      <h1>Om oss</h1>
+
+      <p>
+        Vi er en lokal aktør som tilbyr et enkelt utvalg innen mat, snacks og drikke.
+        Målet vårt er en ryddig kjøpsopplevelse, god kvalitet og rask levering.
+      </p>
+
+      <div class="about-points">
+        <p>Kvalitet i produktene våre</p>
+        <p>Enkel bestilling med handlekurv</p>
+        <p>Tydelig og rask kundekontakt</p>
+      </div>
+
+      <p class="about-contact">
+        Har du spørsmål? Ikke nøl med å ta <a href="../Kontakt/">Kontakt!</a>.
+      </p>
+
+      <a href="../" class="back-btn">← Tilbake til forsiden</a>
+    </section>
+  </main>
+
+  <button class="btn">Dark</button>
+
+  <button id="cart" type="button" aria-controls="cart-panel" aria-expanded="false">
+    🛒 Handlekurv (<span id="cart-count">0</span>)
+  </button>
+
+  <div id="cart-panel" class="hidden">
+    <h3>Handlekurv</h3>
+    <ul id="cart-items"></ul>
+    <button id="clear-cart">Tøm handlekurv</button>
+    <button onclick="checkout()">Kjøp</button>
+  </div>
+
+  <script src="../app.js"></script>
+
+</body>
+</html>

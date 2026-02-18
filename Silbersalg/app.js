@@ -1,5 +1,14 @@
 'use strict';
 
+const API_BASE_URL =
+  window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000'
+    : '';
+
+function apiUrl(path) {
+  return `${API_BASE_URL}${path}`;
+}
+
 /* Bytter mellom light/dark theme. */
 const switcher = document.querySelector('.btn');
 
@@ -36,6 +45,7 @@ const cartPanel = document.getElementById('cart-panel');
 if (cartButton && cartPanel) {
   cartButton.addEventListener('click', () => {
     cartPanel.classList.toggle('hidden');
+    cartButton.setAttribute('aria-expanded', String(!cartPanel.classList.contains('hidden')));
     renderCart();
   });
 }
@@ -131,7 +141,7 @@ async function checkout() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/checkout", {
+    const response = await fetch(apiUrl('/checkout'), {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -175,7 +185,7 @@ if (contactForm) {
 
     try {
       // Sender data til backend
-      const response = await fetch('http://localhost:3000/api/contact', {
+      const response = await fetch(apiUrl('/api/contact'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
