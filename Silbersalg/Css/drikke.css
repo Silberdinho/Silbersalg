@@ -1,4 +1,4 @@
-/* ===== MDMA Product Page Styles ===== */
+/* ===== Drikke Product Page Styles ===== */
 
 .container #msg {
   font-size: 1.3rem;
@@ -39,6 +39,7 @@
 .product-list li p {
   margin: 0;
 }
+
 .notification {
   position: fixed;
   top: 20px;
