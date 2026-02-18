@@ -1,0 +1,82 @@
+* Commands to run node server:
+
+PS C:\Users\Aaron\OneDrive - Universitetet i Agder\Skrivebord\Silbersalg> cd .\server\
+PS C:\Users\Aaron\OneDrive - Universitetet i Agder\Skrivebord\Silbersalg\server> node server.js
+Server kjører på http://localhost:3000
+
+* Commands to move around MariaDb: 
+
+C:\Program Files\MariaDB 11.3\bin>mysql -u root -p
+Enter password: ********
+
+MariaDB [(none)]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| silbersalg         |
+| sys                |
++--------------------+
+
+MariaDB [(none)]> USE SILBERSALG;
+
+MariaDB [silbersalg]> SHOW TABLES;
++----------------------+
+| Tables_in_silbersalg |
++----------------------+
+| order_items          |
+| orders               |
++----------------------+
+
+MariaDB [silbersalg]> SELECT * FROM orders LIMIT 10;
++----------+---------------------+
+| order_id | order_date          |
++----------+---------------------+
+|        1 | 2026-01-27 10:37:08 |
+|        2 | 2026-01-27 10:55:10 |
+|        3 | 2026-01-27 10:55:12 |
+|        4 | 2026-01-27 10:55:18 |
+|        5 | 2026-01-27 10:55:21 |
+|        6 | 2026-01-27 10:59:07 |
+|        7 | 2026-01-27 11:02:30 |
+|        8 | 2026-01-27 11:02:40 |
+|        9 | 2026-01-27 11:18:33 |
++----------+---------------------+
+
+MariaDB [silbersalg]> SELECT * FROM order_items LIMIT 10;
++---------+----------+--------------+
+| item_id | order_id | product_name |
++---------+----------+--------------+
+|       1 |        1 | 1 stk MDMA   |
+|       2 |        2 | 1g Kokain    |
+|       3 |        3 | 1g Kokain    |
+|       4 |        4 | 5g Kokain    |
+|       5 |        4 | 5g Kokain    |
+|       6 |        5 | 5g Kokain    |
+|       7 |        5 | 5g Kokain    |
+|       8 |        6 | 5g Kokain    |
+|       9 |        7 | 5g Kokain    |
+|      10 |        7 | 5 stk MDMA   |
++---------+----------+--------------+
+
+MariaDB [silbersalg]> SELECT COUNT(*) FROM orders;
++----------+
+| COUNT(*) |
++----------+
+|        9 |
++----------+
+
+MariaDB [silbersalg]> SELECT COUNT(*) FROM order_items;
++----------+
+| COUNT(*) |
++----------+
+|       12 |
++----------+
+
+MariaDB [SILBERSALG]> DELETE FROM order_items;
+
+MariaDB [SILBERSALG]> DELETE FROM orders;
+
+

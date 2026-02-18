@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata og felles styling -->
+  <meta charset="utf-8">
+  <title>MDMA</title>
+  <link rel="stylesheet" href="../Css/main.css">
+  <link rel="stylesheet" href="../Css/mdma.css">
+</head>
+
+<body class="dark-theme">
+
+  <main class="container">
+    <h1>MDMA</h1>
+    <p id="msg">Velg ønsket mengde:</p>
+    <div id="notification" class="notification hidden"></div>
+
+      <ul class="product-list">
+        <li onclick="leggTil('1 stk MDMA')">
+          <p>1 stk MDMA</p>
+        </li>
+
+        <li onclick="leggTil('5 stk MDMA')">
+          <p>5 stk MDMA</p>
+        </li>
+
+        <li onclick="leggTil('10 stk MDMA')">
+          <p>10 stk MDMA</p>
+        </li>
+      </ul>
+
+
+    <a href="../index.html" class="back-btn">← Tilbake til forsiden</a>
+
+  </main>
+
+  <!-- Tema-knapp -->
+  <button class="btn">Dark</button>
+
+  <!-- Handlekurv-ikon -->
+  <div id="cart">
+    🛒 Handlekurv (<span id="cart-count">0</span>)
+  </div>
+
+  <!-- Handlekurv-panel -->
+  <div id="cart-panel" class="hidden">
+    <h3>Handlekurv</h3>
+    <ul id="cart-items"></ul>
+    <button id="clear-cart">Tøm handlekurv</button>
+    <button onclick="checkout()">Kjøp</button>
+  </div>
+
+  <script src="../app.js"></script>
+
+</body>
+</html>

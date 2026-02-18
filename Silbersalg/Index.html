@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Grunnleggende metadata og styling -->
+  <meta charset="utf-8">
+  <title>Silbersalg frontpage</title>
+  <link rel="stylesheet" href="Css/main.css">
+  <link rel="stylesheet" href="Css/index.css">
+  <link rel="stylesheet" href="Css/contact-info.css">
+  <link rel="stylesheet" href="Css/contact-form.css">
+</head>
+
+<body class="dark-theme">
+
+<div class="topnav">
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu">
+    <a class="active" href="#home">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="Kokain/Index.html">Kokain</a>
+    <a href="MDMA/Index.html">MDMA</a>
+    <a href="LSD/Index.html">LSD</a>
+  </div>
+</div>
+
+
+  <!-- Sideoverskrift -->
+<main class="container">
+  <h1>Silbersalg</h1>
+  <p id="msg">Våre produkter:</p>
+
+  <ul class="product-list">
+    <li class="nav-item" data-target="Kokain/">Kokain</li>
+    <li class="nav-item" data-target="MDMA/">MDMA</li>
+    <li class="nav-item" data-target="LSD/">LSD</li>
+  </ul>
+</main>
+
+  <!-- Tema-knapp (dark / light mode) -->
+  <button class="btn">Dark</button>
+
+  <!-- Handlekurv-ikon med antall produkter -->
+  <div id="cart">
+    🛒 Handlekurv (<span id="cart-count">0</span>)
+  </div>
+
+  <!-- Panel som viser innholdet i handlekurven -->
+  <div id="cart-panel" class="hidden">
+    <h3>Handlekurv</h3>
+    <ul id="cart-items"></ul>
+    <button id="clear-cart">Tøm handlekurv</button>
+    <button onclick="checkout()">Kjøp</button>
+  </div>
+
+  <!-- Contact section -->
+<footer id="contact">
+  <h2>Kontaktinformasjon:</h2>
+
+  <p>
+    📧 Email:
+    <a href="mailto:aarons@uia.com">aarons@uia.com</a>
+  </p>
+
+  <p>
+    📞 Telefon:
+    <a href="tel:+47112">+47 112</a>
+  </p>
+
+  <p>
+    📍 Lokasjon:
+    <a
+      href="https://www.google.com/maps/place/Little+Saint+James/@18.3004239,-64.8476583,14z/data=!4m6!3m5!1s0x8c051168c4c9f33d:0x4b2c4e6907c7bce7!8m2!3d18.3002113!4d-64.8251647!16s%2Fm%2F03h2bhh?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      "The Island of your dreams"
+    </a>
+  </p>
+
+  <!-- Skille mellom kontaktinfo og skjema -->
+  <div class="form-divider"></div>
+
+  <!-- Kontaktskjema -->
+  <h3>Her kan du ta kontakt med oss:</h3>
+  <form id="contact-form" class="contact-form">
+    <div class="form-group">
+      <label for="name">Navn</label>
+      <input type="text" id="name" name="name" placeholder="Ditt navn" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-post</label>
+      <input type="email" id="email" name="email" placeholder="din@epost.com" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Melding</label>
+      <textarea id="message" name="message" placeholder="Skriv meldingen her..." rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send</button>
+  </form>
+</footer>
+
+  <!-- JavaScript lastes etter at DOM er bygget -->
+  <script src="app.js"></script>
+
+</body>
+</html>

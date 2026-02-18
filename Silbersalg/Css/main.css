@@ -1,0 +1,308 @@
+/* ===== CSS Variables ===== */
+:root {
+  --green: #ffcc00;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* ===== Global Styles ===== */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+
+  background-image: url("../../images/painting-mountain-lake-with-mountain-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  max-height: 100vh;
+}
+
+li {
+  list-style: circle;
+}
+
+.list {
+  list-style: square;
+}
+
+/* ===== Theme Variables ===== */
+.light-theme {
+  --bg: var(--green);
+  --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--white);
+}
+
+.dark-theme {
+  --bg: var(--black);
+  --fontColor: var(--green);
+  --btnBg: var(--white);
+  --btnFontColor: var(--black);
+}
+
+/* ===== Button Styles ===== */
+.btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* ===== Navigation ===== */
+.nav-item {
+  cursor: pointer;
+}
+
+/* ===== Cart Styles ===== */
+#cart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--btnBg);
+  color: var(--btnFontColor);
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#cart:hover {
+  transform: scale(1.05);
+}
+
+#cart-panel {
+  position: fixed;
+  top: 70px;
+  right: 12px;
+  background: var(--bg);
+  color: var(--fontColor);
+  border: 2px solid var(--fontColor);
+  padding: 15px;
+  width: 250px;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+}
+
+#cart-items li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#cart-items button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+#cart-items button:hover {
+  background: darkred;
+}
+
+#clear-cart,
+#cart-panel button[onclick="checkout()"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background: var(--btnBg);
+  color: var(--btnFontColor);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+#clear-cart:hover,
+#cart-panel button[onclick="checkout()"]:hover {
+  opacity: 0.9;
+}
+
+/* ===== Container Layout ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.container h1,
+.container #msg {
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+
+#msg {
+  opacity: 0.8;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+
+  padding: 12px 20px;
+  background: var(--btnBg);
+  color: var(--btnFontColor);
+  text-decoration: none;
+  font-weight: 600;
+
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.topnav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  padding: 8px;
+  z-index: 1000;
+}
+
+/* Hamburger button */
+.topnav {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+  padding: 10px;
+  z-index: 1000;
+}
+
+/* 🍔 Hamburger button */
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 22px;
+  background: #111;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* ❌ Animate to X */
+.topnav.open .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.topnav.open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.topnav.open .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 📂 Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+
+  transition: all 0.35s ease;
+}
+
+.topnav.open .menu {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔗 Links */
+.menu a {
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  font-family: system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+
+  color: #222;
+  text-decoration: none;
+
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.menu a:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateX(2px);
+}
+
+.menu a.active {
+  background: #111;
+  color: white;
+}
+
+
