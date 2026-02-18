@@ -204,12 +204,9 @@ if (contactForm) {
 const nav = document.querySelector('.topnav');
 const toggle = document.querySelector('.menu-toggle');
 
-toggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
-          message,
-
-        }),
-
-      });
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+}
 
