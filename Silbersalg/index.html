@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Grunnleggende metadata og styling -->
   <meta charset="utf-8">
   <title>Silbersalg frontpage</title>
   <link rel="stylesheet" href="Css/main.css">
@@ -23,14 +22,12 @@
     <a class="active" href="#home">Home</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
-    <a href="Mat/Index.html">Mat</a>
-    <a href="Snacks/Index.html">Snacks</a>
-    <a href="Drikke/Index.html">Drikke</a>
+    <a href="Mat/index.html">Mat</a>
+    <a href="Snacks/index.html">Snacks</a>
+    <a href="Drikke/index.html">Drikke</a>
   </div>
 </div>
 
-
-  <!-- Sideoverskrift -->
 <main class="container">
   <h1>Silbersalg</h1>
   <p id="msg">Våre produkter:</p>
@@ -42,15 +39,12 @@
   </ul>
 </main>
 
-  <!-- Tema-knapp (dark / light mode) -->
   <button class="btn">Dark</button>
 
-  <!-- Handlekurv-ikon med antall produkter -->
   <div id="cart">
     🛒 Handlekurv (<span id="cart-count">0</span>)
   </div>
 
-  <!-- Panel som viser innholdet i handlekurven -->
   <div id="cart-panel" class="hidden">
     <h3>Handlekurv</h3>
     <ul id="cart-items"></ul>
@@ -58,7 +52,6 @@
     <button onclick="checkout()">Kjøp</button>
   </div>
 
-  <!-- Contact section -->
 <footer id="contact">
   <h2>Kontaktinformasjon:</h2>
 
@@ -83,10 +76,8 @@
     </a>
   </p>
 
-  <!-- Skille mellom kontaktinfo og skjema -->
   <div class="form-divider"></div>
 
-  <!-- Kontaktskjema -->
   <h3>Her kan du ta kontakt med oss:</h3>
   <form id="contact-form" class="contact-form">
     <div class="form-group">
@@ -108,7 +99,6 @@
   </form>
 </footer>
 
-  <!-- JavaScript lastes etter at DOM er bygget -->
   <script src="app.js"></script>
 
 </body>
